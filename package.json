@@ -1,0 +1,30 @@
+{
+  "name": "figma-motion-to-json",
+  "version": "1.0.0",
+  "description": "Figma plugin that exports Motion animations to an AI-readable MotionSpec JSON",
+  "main": "dist/src/code/code.js",
+  "scripts": {
+    "start": "concurrently --kill-others -p \"{name}\" -n \"ui  ,code\" -c \"cyan.bold,green.bold\" \"npm run start:ui\" \"npm run start:code\"",
+    "start:ui": "vite build --watch --config vite-ui.config.js",
+    "start:code": "vite build --watch --config vite-code.config.js",
+    "build": "vite build --config vite-ui.config.js && vite build --config vite-code.config.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "vue": "^3.2.26"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.141.0",
+    "@vitejs/plugin-vue": "^2.0.1",
+    "@vue/compiler-sfc": "^3.2.26",
+    "concurrently": "^7.6.0",
+    "typescript": "^5.4.5",
+    "vite": "^2.7.10",
+    "vite-plugin-singlefile": "^0.6.3",
+    "vitest": "^0.22.1"
+  }
+}
